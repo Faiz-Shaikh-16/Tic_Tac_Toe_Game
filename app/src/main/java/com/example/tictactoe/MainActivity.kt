@@ -2,13 +2,18 @@ package com.example.tictactoe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import kotlinx.coroutines.delay
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
-    var flag=0
-    var count=0
+    var flag = 0
+    var count = 0
     private lateinit var btn1: Button
     private lateinit var btn2: Button
     private lateinit var btn3: Button
@@ -18,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btn7: Button
     private lateinit var btn8: Button
     private lateinit var btn9: Button
+    private lateinit var tvResult: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         btn7 = findViewById(R.id.btn7)
         btn8 = findViewById(R.id.btn8)
         btn9 = findViewById(R.id.btn9)
+
+        tvResult = findViewById(R.id.tvResult)
     }
 
     fun check(view: View) {
@@ -60,49 +68,93 @@ class MainActivity : AppCompatActivity() {
 
             if (b1 == b2 && b2 == b3 && b3 != "") {
                 Toast.makeText(this@MainActivity, "Winner is: $b1", Toast.LENGTH_LONG).show()
+
+                tvResult.text = "Winner is: $b1"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
-            } else if (b4 == b5 && b5 == b6 && b6 != "") {
+            }
+            else if (b4 == b5 && b5 == b6 && b6 != "") {
                 Toast.makeText(this@MainActivity, "Winner is $b4", Toast.LENGTH_LONG).show()
+                tvResult.text = "Winner is: $b4"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
-            } else if (b7 == b8 && b8 == b9 && b9 != "") {
+            }
+            else if (b7 == b8 && b8 == b9 && b9 != "") {
                 Toast.makeText(this@MainActivity, "Winner is $b7", Toast.LENGTH_LONG).show()
+                tvResult.text = "Winner is: $b7"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
-            } else if (b1 == b4 && b4 == b7 && b7 != "") {
+            }
+            else if (b1 == b4 && b4 == b7 && b7 != "") {
                 Toast.makeText(this@MainActivity, "Winner is $b1", Toast.LENGTH_LONG).show()
+                tvResult.text = "Winner is: $b1"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
-            } else if (b2 == b5 && b5 == b8 && b8 != "") {
+            }
+            else if (b2 == b5 && b5 == b8 && b8 != "") {
                 Toast.makeText(this@MainActivity, "Winner is $b2", Toast.LENGTH_LONG).show()
+                tvResult.text = "Winner is: $b2"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
-            } else if (b3 == b6 && b6 == b9 && b9 != "") {
+            }
+            else if (b3 == b6 && b6 == b9 && b9 != "") {
                 Toast.makeText(this@MainActivity, "Winner is $b3", Toast.LENGTH_LONG).show()
+                tvResult.text = "Winner is: $b3"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
             }
             else if (b1 == b5 && b5 == b9 && b9 != "") {
                 Toast.makeText(this@MainActivity, "Winner is $b1", Toast.LENGTH_LONG).show()
+                tvResult.text = "Winner is: $b1"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
             }
             else if (b3 == b5 && b5 == b7 && b7 != "") {
                 Toast.makeText(this@MainActivity, "Winner is $b3", Toast.LENGTH_LONG).show()
+                tvResult.text = "Winner is: $b3"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
             }
-            else if(count==9){
+            else if (count == 9) {
                 Toast.makeText(this@MainActivity, "Match is drawn", Toast.LENGTH_LONG).show()
+                tvResult.text = "Match is Drawn"
+                Handler(Looper.getMainLooper()).postDelayed({
+                    tvResult.text = ""
+                }, 4000)
                 newGame()
             }
         }
     }
 
-    fun newGame(){
-        btn1.text =""
-        btn2.text =""
-        btn3.text =""
-        btn4.text =""
-        btn5.text =""
-        btn6.text =""
-        btn7.text =""
-        btn8.text =""
-        btn9.text =""
-        flag=0
-        count=0
-    }
+    fun newGame() = Handler(Looper.getMainLooper()).postDelayed({
+        btn1.text = ""
+        btn2.text = ""
+        btn3.text = ""
+        btn4.text = ""
+        btn5.text = ""
+        btn6.text = ""
+        btn7.text = ""
+        btn8.text = ""
+        btn9.text = ""
+        flag = 0
+        count = 0
+
+    }, 4000)
+
 }

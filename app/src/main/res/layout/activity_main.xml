@@ -1,67 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="monospace"
         android:text="Tic Tac Toe"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"/>
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="35sp"
+        android:textStyle="bold|italic" />
 
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="3"
+        android:layout_marginTop="20dp"
         android:background="#E3C6C6"
-        android:layout_marginTop="10dp">
+        android:columnCount="3">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="11dp"
-            android:onClick="check"/>
-        <Button
-            android:id="@+id/btn2"
-            android:layout_margin="11dp"
-            android:onClick="check"/>
-        <Button
-            android:id="@+id/btn3"
-            android:layout_margin="11dp"
-            android:onClick="check"/>
-        <Button
-            android:id="@+id/btn4"
-            android:layout_margin="11dp"
-            android:onClick="check"/>
-        <Button
-            android:id="@+id/btn5"
-            android:layout_margin="11dp"
-            android:onClick="check"/>
-        <Button
-            android:id="@+id/btn6"
-            android:layout_margin="11dp"
-            android:onClick="check"/>
-        <Button
-            android:id="@+id/btn7"
-            android:layout_margin="11dp"
-            android:onClick="check" />
-        <Button
-            android:id="@+id/btn8"
-            android:layout_margin="11dp"
-            android:onClick="check"/>
-        <Button
-            android:id="@+id/btn9"
-            android:layout_margin="11dp"
-            android:onClick="check"/>
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp"
+            tools:text="X" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="11dp"
+            android:background="#7B1FA2"
+            android:onClick="check"
+            android:textColor="#FFF"
+            android:textSize="35sp" />
 
 
     </GridLayout>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:text="Winner is X" />
 
 </LinearLayout>
